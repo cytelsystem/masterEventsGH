@@ -1,0 +1,71 @@
+/* Estilos base para pantallas más pequeñas (menos de 768px) */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  padding: 0 30px;
+  border-bottom: solid 15px #43777A;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-text {
+  width: 318px;
+  flex-shrink: 0;
+  color: var(--B--DB-COLOR-3, #545776);
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 25px;
+}
+
+.button-container {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.header-button {
+  display: inline-flex;
+  color: #43777A;
+  width: 206px;
+  height: 40px;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #43777A;
+  background: #FFF;
+  justify-content: space-around;
+  font-weight: 600;
+}
+
+
+/* Media query para pantallas más grandes (más de 768px) */
+@media (min-width: 768px) {
+  .header {
+    padding: 0 50px; /* Ajusta el padding según tus necesidades */
+  }
+
+  .header-text {
+    margin-top: 25px; /* Elimina el margen superior en pantallas más grandes */
+  }
+
+  .button-container {
+    gap: 20px; /* Ajusta el espacio entre botones en pantallas más grandes */
+  }
+
+  .header-button {
+    width: 240px; /* Ajusta el ancho de los botones en pantallas más grandes */
+  }
+}
+
