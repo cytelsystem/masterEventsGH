@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
         </Link>
       </div>
       <p>Design your awesome Home component here!</p>
+      <Footer />
     </div>
   );
 };
