@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <Header />
       <h1 className="text-3xl font-bold mb-4">Welcome to Master Events</h1>
       <div className="my-6">
         <Link to="/notifications" className="text-blue-500 hover:underline mx-4">
@@ -26,7 +23,6 @@ const Home = () => {
         </Link>
       </div>
       <p>Design your awesome Home component here!</p>
-      <Footer />
     </div>
   );
 };
