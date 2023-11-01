@@ -1,0 +1,9 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: api-eureka
+cloud:
+  config:
+    enabled: true
+    uri: http://localhost:8888/

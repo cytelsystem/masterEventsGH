@@ -1,0 +1,30 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: api-gateway
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak-provider:
+            issuer-uri: http://localhost:8089/realms/account-realm
+
+cloud:
+  gateway:
+    default-filters:
+      - TokenRelay
+    routes:
+      - id: api-user
+        uri: lb://api-user
+        predicates:
+          - Path=/users/**
+      - id: api-event
+        uri: lb://api-event
+        predicates:
+          - Path=/events/**
+      - id: api-company
+        uri: lb://api-company
+        predicates:
+          - Path=/company/**

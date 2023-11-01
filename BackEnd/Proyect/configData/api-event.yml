@@ -1,0 +1,17 @@
+server:
+  port:
+    8087
+spring:
+  application:
+    name: api-event
+  main:
+    allow-circular-references: true
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
