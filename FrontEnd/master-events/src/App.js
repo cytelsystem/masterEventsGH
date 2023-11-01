@@ -13,11 +13,11 @@ function App() {
       <BrowserRouter>
         <Layout>
             <Routes>
-              {/* <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/password-recovery" element={<PasswordRecovery />} />
               <Route path="/registration" element={<Registration />} />
               <Route path="/signin" element={<SignIn />} />
-              <Route path="/userprofile" element={<UserProfile />} /> */}
+              <Route path="/userprofile" element={<UserProfile />} /> 
             </Routes>
           </Layout>
       </BrowserRouter>

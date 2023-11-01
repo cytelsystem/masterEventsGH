@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../components/Header/Header';
-import Main from '../components/Main/Main';
 import Footer from '../components/Footer/Footer';
 import {DataProvider} from '../DataContext';
 
@@ -9,9 +8,8 @@ function Layout (props) {
     <DataProvider>
       <React.Fragment>
         <Header />
-        <Main/>
-        <Footer/>
         {props.children}
+        <Footer/>
       </React.Fragment>
     </DataProvider>
   )
