@@ -24,7 +24,7 @@ public class CompanyController {
     }
 
     @PostMapping
-    public ResponseEntity<Company> SaveNewUser(@RequestBody Company c) {
+    public ResponseEntity<Company> SaveNewCompany(@RequestBody Company c) {
         return ResponseEntity.status(HttpStatus.CREATED).body(companyService.SaveCompany(c));
     }
 
@@ -40,7 +40,7 @@ public class CompanyController {
     }
 
     @PutMapping
-    public ResponseEntity<Company> editEvent(@RequestBody Company c) throws BadRequestException {
+    public ResponseEntity<Company> editCompany(@RequestBody Company c) throws BadRequestException {
         Company companyEvent = companyService.EditCompany(c);
         return ResponseEntity.ok(companyEvent);
     }

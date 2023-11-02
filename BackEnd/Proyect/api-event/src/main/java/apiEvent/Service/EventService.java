@@ -6,8 +6,10 @@ import apiEvent.Repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.zip.DataFormatException;
 
 @Service
 public class EventService {
@@ -27,12 +29,51 @@ public class EventService {
         return eventRepository.findAll();
     }
 
-    public Event FindEventByID(Long id){
-        return eventRepository.findById(id).get();
+    public Event FindEventByID(Long id) throws BadRequestException{
+        Optional<Event> eventSearched = eventRepository.findById(id);
+        if (eventSearched.isPresent()){
+            return eventRepository.findById(id).get();
+        }else{
+            throw new BadRequestException("This event doesn't exist");
+        }
     }
 
-    public void DeleteByID(Long id){
-        eventRepository.deleteById(id);
+    public List<Event> FindEventByCategory(String category) throws BadRequestException{
+        Optional<List<Event>> categorySearched = Optional.ofNullable(eventRepository.findByCategory(category));
+
+        if (categorySearched.isPresent()){
+            return eventRepository.findByCategory(category);
+        }else{
+            throw new BadRequestException("Category doesn't exist");
+        }
+
+    }
+
+    public List<Event> FindEventByLocation(String location) throws BadRequestException{
+        Optional<List<Event>> locationSearched = Optional.ofNullable(eventRepository.findByLocation(location));
+        if (locationSearched.isPresent()){
+            return eventRepository.findByLocation(location);
+        }else{
+            throw new BadRequestException("Location doesn't exist");
+        }
+    }
+
+    public List<Event> FindEventByDate(Date date) throws BadRequestException{
+        Optional<List<Event>> dateSearched = Optional.ofNullable(eventRepository.findByDate(date));
+        if (dateSearched.isPresent()){
+            return eventRepository.findByDate(date);
+        } else {
+            throw new BadRequestException("There are no events with that date");
+        }
+    }
+    public void DeleteByID(Long id) throws BadRequestException{
+        Optional<Event> eventSearched = eventRepository.findById(id);
+        if (eventSearched.isPresent()){
+            eventRepository.deleteById(id);
+        } else {
+            throw new BadRequestException("This event can't be deleted");
+        }
+
     }
 
     public Event EditEvent(Event event) throws BadRequestException {

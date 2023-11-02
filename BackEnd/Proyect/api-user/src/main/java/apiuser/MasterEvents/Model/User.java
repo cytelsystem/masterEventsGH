@@ -1,5 +1,6 @@
 package apiuser.MasterEvents.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -17,6 +18,7 @@ import java.sql.Date;
 public class User {
     @Id
     private Long id;
+    @JsonIgnore
     private String role;
     private String name;
     private String lastName;

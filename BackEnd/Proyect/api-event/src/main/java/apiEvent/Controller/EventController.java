@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.Collections;
 import java.util.List;
 
@@ -38,6 +39,20 @@ public class EventController {
         List<Event> eventsList = eventService.ListAllEvents();
         Collections.shuffle(eventsList);
         return ResponseEntity.ok(eventsList);
+    }
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<Event>> eventByCategory(@PathVariable String category) throws BadRequestException {
+        return ResponseEntity.ok(eventService.FindEventByCategory(category));
+    }
+
+    @GetMapping("/location/{location}")
+    public ResponseEntity<List<Event>> eventByLocation(@PathVariable String location) throws BadRequestException{
+        return ResponseEntity.ok(eventService.FindEventByLocation(location));
+    }
+
+    @GetMapping("date/{date}")
+    public ResponseEntity<List<Event>> eventByDate(@PathVariable Date date) throws BadRequestException{
+        return ResponseEntity.ok(eventService.FindEventByDate(date));
     }
 
     @GetMapping("/{id}")

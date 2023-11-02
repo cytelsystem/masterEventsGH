@@ -27,12 +27,22 @@ public class CompanyService {
         return companyRepository.findAll();
     }
 
-    public Company FindCompanyByID(Long id){
-        return companyRepository.findById(id).get();
+    public Company FindCompanyByID(Long id) throws BadRequestException{
+        Optional<Company> company = companyRepository.findById(id);
+        if (company.isPresent()){
+            return companyRepository.findById(id).get();
+        }else{
+            throw new BadRequestException("This company doesn't exist");
+        }
     }
 
-    public void DeleteByID(Long id){
-        companyRepository.deleteById(id);
+    public void DeleteByID(Long id) throws BadRequestException{
+        Optional<Company> company = companyRepository.findById(id);
+        if (company.isPresent()) {
+            companyRepository.delete(company.get());
+        } else {
+            throw new BadRequestException("This company doesn't exist");
+        }
     }
 
     public Company EditCompany(Company company) throws BadRequestException {
