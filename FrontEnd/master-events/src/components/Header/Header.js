@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo-container">
-        <Link to='/' onClick={handleFooterFix }>
+        <Link to='/' onClick={handleRemoveFooterFix }>
           <img src="/logo.svg" alt="MasterEvents Logo" width="100" height="57" />
         </Link>
         <div className="header-text">
