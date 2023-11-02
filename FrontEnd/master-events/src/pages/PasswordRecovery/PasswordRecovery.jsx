@@ -28,48 +28,50 @@ const PasswordRecovery = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-200">
+      <div className="w-full max-w-md rounded-lg p-8 bg-gray-300" style={{ boxShadow: 'inset 2px 2px 6px #ffffff99, inset -2px -2px 6px #ffffff99', borderRadius: '20px' }}>
         {isUserSection ? (
           <form onSubmit={handleUserSubmit} className="mb-8">
-            <h2 className="text-3xl font-bold mb-4">User Password Recovery</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">Recuperación de Contraseña de Usuario</h2>
             <input
-              // User email input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Ingrese su correo electrónico"
               value={userEmail}
               onChange={handleUserEmailChange}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full py-3 px-4 my-2 rounded-lg bg-gray-300 focus:outline-none"
+              style={{ borderRadius: '25px', boxShadow: 'inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73' }}
             />
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
+              className="block font-bold py-3 px-6 rounded-lg w-full my-4 bg-gray-350 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
+              style={{ borderRadius: '25px', boxShadow: '2px 2px 6px #babecc, -5px -5px 10px #ffffff73' }}
             >
-              Recover Password
+              Recuperar Contraseña
             </button>
           </form>
         ) : (
           <form onSubmit={handleOrganizerSubmit} className="mb-8">
-            <h2 className="text-3xl font-bold mb-4">Organizer Password Recovery</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">Recuperación de Contraseña de Organizador</h2>
             <input
-              // Organizer email input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Ingrese su correo electrónico"
               value={organizerEmail}
               onChange={handleOrganizerEmailChange}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full py-3 px-4 my-2 rounded-lg bg-gray-300 focus:outline-none"
+              style={{ borderRadius: '25px', boxShadow: 'inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73' }}
             />
             <button
               type="submit"
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
+              className="block font-bold py-3 px-6 rounded-lg w-full my-4 bg-gray-350 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
+              style={{ borderRadius: '25px', boxShadow: '2px 2px 6px #babecc, -5px -5px 10px #ffffff73' }}
             >
-              Recover Password
+              Recuperar Contraseña
             </button>
           </form>
         )}
         <div className="mt-4">
           <button onClick={toggleSection} className="text-blue-500 hover:underline focus:outline-none">
-            {isUserSection ? 'Or recover as an Organizer' : 'Or recover as a User'}
+            {isUserSection ? 'Recuperar como Organizador' : 'Recuperar como Usuario'}
           </button>
         </div>
       </div>
@@ -78,3 +80,5 @@ const PasswordRecovery = () => {
 };
 
 export default PasswordRecovery;
+
+

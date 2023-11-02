@@ -35,74 +35,76 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-200">
+      <div className="w-full max-w-md rounded-lg p-8 bg-gray-300" style={{ boxShadow: 'inset 2px 2px 6px #ffffff99, inset -2px -2px 6px #ffffff99', borderRadius: '20px' }}>
         {isUserSection ? (
           <form onSubmit={handleUserSubmit} className="mb-8">
-            <h2 className="text-3xl font-bold mb-4">User Sign In</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">Login de Usuario</h2>
             <input
-              // User sign-in form inputs
               type="email"
-              placeholder="Enter your email"
+              placeholder="Ingrese su email"
               value={userData.userEmail}
               onChange={handleUserChange}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+              className="w-full py-3 px-4 my-2 rounded-lg bg-gray-300 focus:outline-none"
+              style={{ borderRadius: '25px', boxShadow: 'inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73' }}
             />
             <input
-              // User password input
               type="password"
               placeholder="Enter your password"
               value={userData.userPassword}
               onChange={handleUserChange}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full py-3 px-4 my-2 rounded-lg bg-gray-300 focus:outline-none"
+              style={{ borderRadius: '25px', boxShadow: 'inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73' }}
             />
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
+              className="block font-bold py-3 px-6 rounded-lg w-full my-4 bg-gray-350 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
+              style={{ borderRadius: '25px', boxShadow: '2px 2px 6px #babecc, -5px -5px 10px #ffffff73' }}
             >
-              Sign In as User
+              Iniciar Sesion
             </button>
             <p className="mt-4">
               <Link to="/password-recovery" className="text-blue-500 hover:underline">
-                Forgot your password? Recover here
+                Olvidaste tu Contraseña?
               </Link>
             </p>
           </form>
         ) : (
           <form onSubmit={handleOrganizerSubmit} className="mb-8">
-            <h2 className="text-3xl font-bold mb-4">Organizer Sign In</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-800 text-center">Login de Organizador</h2>
             <input
-              // Organizer email input
               type="email"
               placeholder="Enter your email"
               value={organizerData.organizerEmail}
               onChange={handleOrganizerChange}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+              className="w-full py-3 px-4 my-2 rounded-lg bg-gray-300 focus:outline-none"
+              style={{ borderRadius: '25px', boxShadow: 'inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73' }}
             />
             <input
-              // Organizer password input
               type="password"
               placeholder="Enter your password"
               value={organizerData.organizerPassword}
               onChange={handleOrganizerChange}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full py-3 px-4 my-2 rounded-lg bg-gray-300 focus:outline-none"
+              style={{ borderRadius: '25px', boxShadow: 'inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73' }}
             />
             <button
               type="submit"
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
+              className="block font-bold py-3 px-6 rounded-lg w-full my-4 bg-gray-350 text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
+              style={{ borderRadius: '25px', boxShadow: '2px 2px 6px #babecc, -5px -5px 10px #ffffff73' }}
             >
-              Sign In as Organizer
+              Iniciar Sesion
             </button>
             <p className="mt-4">
               <Link to="/password-recovery" className="text-blue-500 hover:underline">
-                Forgot your password? Recover here
+                Olvidaste tu Contraseña?
               </Link>
             </p>
           </form>
         )}
         <div className="mt-4">
           <button onClick={toggleSection} className="text-blue-500 hover:underline focus:outline-none">
-            {isUserSection ? 'Or sign in as an Organizer' : 'Or sign in as a User'}
+            {isUserSection ? 'Ingresar como Organizador' : 'Ingresar como Usuario'}
           </button>
         </div>
       </div>
@@ -111,3 +113,6 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+
+
