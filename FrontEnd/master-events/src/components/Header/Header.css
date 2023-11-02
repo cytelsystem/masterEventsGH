@@ -35,7 +35,7 @@
 
 .header-button {
   display: inline-flex;
-  color: #43777A;
+  color: #442432;
   width: 206px;
   height: 40px;
   padding: 10px;
@@ -44,7 +44,7 @@
   flex-shrink: 0;
   border-radius: 5px;
   border: 1px solid #43777A;
-  background: #FFF;
+  background: #6E75A8;
   justify-content: space-around;
   font-weight: 600;
 }

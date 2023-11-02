@@ -114,12 +114,12 @@ const Registration = () => {
                         />
                     </div>
                     <button
-                        type="submit"
-                        className="block bg-blue-600 font-bold py-2 px-4 rounded w-1/2 mx-auto mt-4"
-                        style={{ color: '#442432' }}
-                    >
-                        Registrarse
-                    </button>
+                            type="submit"
+                            className="block font-bold py-2 px-4 rounded w-1/2 mx-auto mt-4"
+                            style={{ color: '#442432' , backgroundColor: '#6E75A8'}}
+                        >
+                            Registrarse
+                        </button>
                 </form>
                 ) : (
                     <form onSubmit={handleUserSubmit} className="mb-4">
@@ -205,8 +205,8 @@ const Registration = () => {
                         </div>
                         <button
                             type="submit"
-                            className="block bg-blue-600 font-bold py-2 px-4 rounded w-1/2 mx-auto mt-4"
-                            style={{ color: '#442432' }}
+                            className="block font-bold py-2 px-4 rounded w-1/2 mx-auto mt-4"
+                            style={{ color: '#442432' , backgroundColor: '#A9A9A9'}}
                         >
                             Registrarse
                         </button>
