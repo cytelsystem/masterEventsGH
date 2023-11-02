@@ -25,7 +25,7 @@ public class EventController {
     }
 
     @PostMapping
-    public ResponseEntity<Event> SaveNewUser(@RequestBody Event event) {
+    public ResponseEntity<Event> SaveNewEvent(@RequestBody Event event) {
         return ResponseEntity.status(HttpStatus.CREATED).body(eventService.SaveEvent(event));
     }
 
