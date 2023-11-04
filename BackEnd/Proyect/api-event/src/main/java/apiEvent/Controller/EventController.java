@@ -56,12 +56,12 @@ public class EventController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Event> findById(@PathVariable Long id) throws BadRequestException {
+    public ResponseEntity<Event> findById(@PathVariable Long id) throws BadRequestException, ResourceNotFoundException {
         return ResponseEntity.ok(eventService.FindEventByID(id));
     }
 
     @PutMapping
-    public ResponseEntity<Event> editEvent(@RequestBody Event event) throws BadRequestException {
+    public ResponseEntity<Event> editEvent(@RequestBody Event event) throws BadRequestException, ResourceNotFoundException {
         Event editedEvent = eventService.EditEvent(event);
         return ResponseEntity.ok(editedEvent);
     }

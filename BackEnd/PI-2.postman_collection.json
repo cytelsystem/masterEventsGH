@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "57188bd7-5074-4236-8f55-a64ed8151b38",
+		"name": "PI-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21634418"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "Configuration of Realm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8089/realms/accounting-realm/.well-known/openid-configuration"
+					},
+					"response": [
+						{
+							"name": "Configuration of Realm",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8089/realms/accounting-realm/.well-known/openid-configuration"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, no-transform, no-store"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "content-length",
+									"value": "6033"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"issuer\": \"http://localhost:8089/realms/accounting-realm\",\n    \"authorization_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/auth\",\n    \"token_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/token\",\n    \"introspection_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/token/introspect\",\n    \"userinfo_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/userinfo\",\n    \"end_session_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/logout\",\n    \"frontchannel_logout_session_supported\": true,\n    \"frontchannel_logout_supported\": true,\n    \"jwks_uri\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/certs\",\n    \"check_session_iframe\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/login-status-iframe.html\",\n    \"grant_types_supported\": [\n        \"authorization_code\",\n        \"implicit\",\n        \"refresh_token\",\n        \"password\",\n        \"client_credentials\",\n        \"urn:ietf:params:oauth:grant-type:device_code\",\n        \"urn:openid:params:grant-type:ciba\"\n    ],\n    \"acr_values_supported\": [\n        \"0\",\n        \"1\"\n    ],\n    \"response_types_supported\": [\n        \"code\",\n        \"none\",\n        \"id_token\",\n        \"token\",\n        \"id_token token\",\n        \"code id_token\",\n        \"code token\",\n        \"code id_token token\"\n    ],\n    \"subject_types_supported\": [\n        \"public\",\n        \"pairwise\"\n    ],\n    \"id_token_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"id_token_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"RSA1_5\"\n    ],\n    \"id_token_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"userinfo_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\",\n        \"none\"\n    ],\n    \"userinfo_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"RSA1_5\"\n    ],\n    \"userinfo_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"request_object_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\",\n        \"none\"\n    ],\n    \"request_object_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"RSA1_5\"\n    ],\n    \"request_object_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"response_modes_supported\": [\n        \"query\",\n        \"fragment\",\n        \"form_post\",\n        \"query.jwt\",\n        \"fragment.jwt\",\n        \"form_post.jwt\",\n        \"jwt\"\n    ],\n    \"registration_endpoint\": \"http://localhost:8089/realms/accounting-realm/clients-registrations/openid-connect\",\n    \"token_endpoint_auth_methods_supported\": [\n        \"private_key_jwt\",\n        \"client_secret_basic\",\n        \"client_secret_post\",\n        \"tls_client_auth\",\n        \"client_secret_jwt\"\n    ],\n    \"token_endpoint_auth_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"introspection_endpoint_auth_methods_supported\": [\n        \"private_key_jwt\",\n        \"client_secret_basic\",\n        \"client_secret_post\",\n        \"tls_client_auth\",\n        \"client_secret_jwt\"\n    ],\n    \"introspection_endpoint_auth_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"authorization_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"authorization_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"RSA1_5\"\n    ],\n    \"authorization_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"claims_supported\": [\n        \"aud\",\n        \"sub\",\n        \"iss\",\n        \"auth_time\",\n        \"name\",\n        \"given_name\",\n        \"family_name\",\n        \"preferred_username\",\n        \"email\",\n        \"acr\"\n    ],\n    \"claim_types_supported\": [\n        \"normal\"\n    ],\n    \"claims_parameter_supported\": true,\n    \"scopes_supported\": [\n        \"openid\",\n        \"email\",\n        \"acr\",\n        \"address\",\n        \"web-origins\",\n        \"roles\",\n        \"offline_access\",\n        \"profile\",\n        \"phone\",\n        \"microprofile-jwt\"\n    ],\n    \"request_parameter_supported\": true,\n    \"request_uri_parameter_supported\": true,\n    \"require_request_uri_registration\": true,\n    \"code_challenge_methods_supported\": [\n        \"plain\",\n        \"S256\"\n    ],\n    \"tls_client_certificate_bound_access_tokens\": true,\n    \"revocation_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/revoke\",\n    \"revocation_endpoint_auth_methods_supported\": [\n        \"private_key_jwt\",\n        \"client_secret_basic\",\n        \"client_secret_post\",\n        \"tls_client_auth\",\n        \"client_secret_jwt\"\n    ],\n    \"revocation_endpoint_auth_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"backchannel_logout_supported\": true,\n    \"backchannel_logout_session_supported\": true,\n    \"device_authorization_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/auth/device\",\n    \"backchannel_token_delivery_modes_supported\": [\n        \"poll\",\n        \"ping\"\n    ],\n    \"backchannel_authentication_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/ext/ciba/auth\",\n    \"backchannel_authentication_request_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"ES256\",\n        \"RS256\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"require_pushed_authorization_requests\": false,\n    \"pushed_authorization_request_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/ext/par/request\",\n    \"mtls_endpoint_aliases\": {\n        \"token_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/token\",\n        \"revocation_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/revoke\",\n        \"introspection_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/token/introspect\",\n        \"device_authorization_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/auth/device\",\n        \"registration_endpoint\": \"http://localhost:8089/realms/accounting-realm/clients-registrations/openid-connect\",\n        \"userinfo_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/userinfo\",\n        \"pushed_authorization_request_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/ext/par/request\",\n        \"backchannel_authentication_endpoint\": \"http://localhost:8089/realms/accounting-realm/protocol/openid-connect/ext/ciba/auth\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Getting Access Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "receipt-client",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "receipt-secret",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "carlos",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8089/realms/accounting-realm/protocol/openid-connect/token"
+					},
+					"response": [
+						{
+							"name": "Getting Access Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "receipt-client",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "receipt-secret",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "carlos",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://localhost:8089/realms/accounting-realm/protocol/openid-connect/token"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "KEYCLOAK_LOCALE=; Version=1; Comment=Expiring cookie; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/realms/accounting-realm/; HttpOnly"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/realms/accounting-realm/; HttpOnly"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "content-length",
+									"value": "2269"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxWk5KbFJNUGxmV051RldhRHJ2a2hMMmpsVTRFdXg0TFNXeGNfWU9vemNBIn0.eyJleHAiOjE2OTg3MTM5OTAsImlhdCI6MTY5ODcxMzY5MCwianRpIjoiNzVkNzUxNGUtZDMxYS00ZjJkLTk4MmEtZTc3YzQwYmZkOWRjIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDg5L3JlYWxtcy9hY2NvdW50aW5nLXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImJmNjBjZDE5LTA4ZTktNDI5Zi1hM2RhLTlmODc1NDhiMGJhYSIsInR5cCI6IkJlYXJlciIsImF6cCI6InJlY2VpcHQtY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6Ijk2NmQyMWQ0LWNhNzQtNGQ5ZC05MjllLTA1NDAyY2JmODg0MCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1hY2NvdW50aW5nLXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijk2NmQyMWQ0LWNhNzQtNGQ5ZC05MjllLTA1NDAyY2JmODg0MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNhcmxvcyIsImdyb3VwcyI6WyJQUk9WSURFUlMiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoiY2FybG9zIiwiZ2l2ZW5fbmFtZSI6IkNhcmxvcyIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIn0.ewUDetKfhTAVITvw-DWdrlI6Qy5nBPfqJ9S1UMankH_uQ5ysb7hN6PhZMK6Nl6Wc0IsXsY86LcniMG0nFvc7huXJYOEvco3HxvDRVG4JsBa7_cpW41yvXQjOC32itki6ZJD7tJShh942MAw7BUMslnLFVusPlddjB27K7vx-xpyWejsx5R28lgjVhU3ZET_-DXVrsMkc1d8Q2Zqukcj5J41XJTHIp8JWy2l7kFD2UaXHuffaG072RC973qj3ubkHGU-TD4zFIYJze2srpnpu_cDTDX6NGrEBgUCsRlcjTNxC_rNchYuH62mi2AsqcDoDwuyULY0VcK2g9johlWJprQ\",\n    \"expires_in\": 300,\n    \"refresh_expires_in\": 1800,\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5ZTk4NmYyMi01YmY1LTQyMGItOTM5OC1jMzYzOGNhOTg4MzMifQ.eyJleHAiOjE2OTg3MTU0OTAsImlhdCI6MTY5ODcxMzY5MCwianRpIjoiMjI3NTIxY2UtNGNhOS00ZDQzLTkyMWMtNTg0YjIwZGEzNjdlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDg5L3JlYWxtcy9hY2NvdW50aW5nLXJlYWxtIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDg5L3JlYWxtcy9hY2NvdW50aW5nLXJlYWxtIiwic3ViIjoiYmY2MGNkMTktMDhlOS00MjlmLWEzZGEtOWY4NzU0OGIwYmFhIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InJlY2VpcHQtY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6Ijk2NmQyMWQ0LWNhNzQtNGQ5ZC05MjllLTA1NDAyY2JmODg0MCIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijk2NmQyMWQ0LWNhNzQtNGQ5ZC05MjllLTA1NDAyY2JmODg0MCJ9.-0Lq0i4LkhKm2I3L90VS30Q8UUU8-jtY_oVSmrGCJAQ\",\n    \"token_type\": \"Bearer\",\n    \"not-before-policy\": 0,\n    \"session_state\": \"966d21d4-ca74-4d9d-929e-05402cbf8840\",\n    \"scope\": \"email profile\"\n}"
+						}
+					]
+				},
+				{
+					"name": "API-Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxWk5KbFJNUGxmV051RldhRHJ2a2hMMmpsVTRFdXg0TFNXeGNfWU9vemNBIn0.eyJleHAiOjE2OTg3MTM4MzUsImlhdCI6MTY5ODcxMzUzNSwianRpIjoiN2NjODIyNzgtYWM3Ni00MTRjLWE2ZWMtNDVkNWRlMGZlNmUxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDg5L3JlYWxtcy9hY2NvdW50aW5nLXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImJmNjBjZDE5LTA4ZTktNDI5Zi1hM2RhLTlmODc1NDhiMGJhYSIsInR5cCI6IkJlYXJlciIsImF6cCI6InJlY2VpcHQtY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6Ijg1OGQ2OWQ0LWIxN2UtNDMwZS1iM2FjLWI5Y2I0NTk2MjAyZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1hY2NvdW50aW5nLXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijg1OGQ2OWQ0LWIxN2UtNDMwZS1iM2FjLWI5Y2I0NTk2MjAyZiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNhcmxvcyIsImdyb3VwcyI6WyJQUk9WSURFUlMiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoiY2FybG9zIiwiZ2l2ZW5fbmFtZSI6IkNhcmxvcyIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIn0.Tfw5AZhsnqeBXTfmQVAybbklmtUMdN-krIS_74_7rnB4-wPSeK5qjw1AAe3Q2FZJnzV9CxE0b2FVKY6lbx6QrV_yLOpxsu_RGphOwFue6IuXR5R4U2z67YKJfdBhUZY3sKirSJj7LhLuZHJvSIqRBttdoUNKzsNd0Z_aUp-SBtPfkGj8CH6K2W6DNHb_bOS16MFh0hbxlC8LqJNWdP8Hahnsw9mf7hHnHGrZwFRIZDMi3hIC3aRf_I0tXA7NJbEal8fVFJ5qosizAENCEMgl3_veujHCghYHnQz4oSy_LA0dfUL1CVgOWHKhkYvUFwWoa7_8NmIrjlft1e5bKhvnRA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8092/api/v1/users/findBy"
+					},
+					"response": []
+				},
+				{
+					"name": "user-info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxWk5KbFJNUGxmV051RldhRHJ2a2hMMmpsVTRFdXg0TFNXeGNfWU9vemNBIn0.eyJleHAiOjE2OTg3MTM5OTAsImlhdCI6MTY5ODcxMzY5MCwianRpIjoiNzVkNzUxNGUtZDMxYS00ZjJkLTk4MmEtZTc3YzQwYmZkOWRjIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDg5L3JlYWxtcy9hY2NvdW50aW5nLXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImJmNjBjZDE5LTA4ZTktNDI5Zi1hM2RhLTlmODc1NDhiMGJhYSIsInR5cCI6IkJlYXJlciIsImF6cCI6InJlY2VpcHQtY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6Ijk2NmQyMWQ0LWNhNzQtNGQ5ZC05MjllLTA1NDAyY2JmODg0MCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1hY2NvdW50aW5nLXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijk2NmQyMWQ0LWNhNzQtNGQ5ZC05MjllLTA1NDAyY2JmODg0MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNhcmxvcyIsImdyb3VwcyI6WyJQUk9WSURFUlMiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoiY2FybG9zIiwiZ2l2ZW5fbmFtZSI6IkNhcmxvcyIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIn0.ewUDetKfhTAVITvw-DWdrlI6Qy5nBPfqJ9S1UMankH_uQ5ysb7hN6PhZMK6Nl6Wc0IsXsY86LcniMG0nFvc7huXJYOEvco3HxvDRVG4JsBa7_cpW41yvXQjOC32itki6ZJD7tJShh942MAw7BUMslnLFVusPlddjB27K7vx-xpyWejsx5R28lgjVhU3ZET_-DXVrsMkc1d8Q2Zqukcj5J41XJTHIp8JWy2l7kFD2UaXHuffaG072RC973qj3ubkHGU-TD4zFIYJze2srpnpu_cDTDX6NGrEBgUCsRlcjTNxC_rNchYuH62mi2AsqcDoDwuyULY0VcK2g9johlWJprQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8089/realms/accounting-realm/protocol/openid-connect/userinfo"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mongo",
+			"item": [
+				{
+					"name": "Api-Event",
+					"item": [
+						{
+							"name": "PostEvent",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01\", \n    \"category\":\"category\",\n    \"minimumAge\":15,\n    \"address\":\"Calle calle\",\n    \"openTime\": \"11:00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8087/event"
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01\", \n    \"category\":\"category\",\n    \"minimumAge\":15,\n    \"address\":\"Calle calle\",\n    \"openTime\": \"11:00:00\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:8087/event"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 Nov 2023 23:41:19 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-11-30\",\n    \"category\": \"category\",\n    \"minimumAge\": 15,\n    \"address\": \"Calle calle\",\n    \"openTime\": \"11:00:00\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get-Event",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8087/event/1"
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:8087/event/1"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 04 Nov 2023 00:13:35 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01T00:00:00.000+00:00\",\n    \"category\": \"category\",\n    \"minimumAge\": 15,\n    \"address\": \"Calle calle\",\n    \"openTime\": \"11:00:00\",\n    \"images\": [\n        {\n            \"id\": 1,\n            \"url\": \"url\",\n            \"eventId\": 1\n        }\n    ],\n    \"tickets\": [\n        {\n            \"id\": 1,\n            \"type\": \"VIP\",\n            \"price\": 2000,\n            \"quantity\": 10,\n            \"eventId\": 1\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Api-Image",
+					"item": [
+						{
+							"name": "Post-Image",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"url\",\n    \"eventId\": \"1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8087/image"
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"url\": \"url\",\n    \"eventId\": \"1\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:8087/image"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 Nov 2023 23:48:10 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"url\": \"url\",\n    \"eventId\": 1\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Api-Ticket",
+					"item": [
+						{
+							"name": "Post-Ticket",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"VIP\",\n    \"price\": 2000.0,\n    \"quantity\": 10,\n    \"eventId\": \"1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8087/ticket"
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"normal\",\n    \"price\": 50.0,\n    \"quantity\": 100,\n    \"eventId\": \"1\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:8087/ticket"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 Nov 2023 23:50:58 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"type\": \"normal\",\n    \"price\": 50,\n    \"quantity\": 100,\n    \"eventId\": 1\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

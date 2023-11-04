@@ -41,7 +41,7 @@ public class CompanyService {
         if (company.isPresent()) {
             companyRepository.delete(company.get());
         } else {
-            throw new BadRequestException("This company doesn't exist");
+            throw new BadRequestException("This company can't be deleted since it doesn't exist");
         }
     }
 
@@ -50,7 +50,7 @@ public class CompanyService {
         if (companySearched.isPresent()){
             return companyRepository.save(company);
         } else {
-            throw new BadRequestException("The company doesn't exist");
+            throw new BadRequestException("The company can't be edited");
         }
     }
 }

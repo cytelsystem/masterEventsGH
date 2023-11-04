@@ -5,14 +5,10 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8888
-  datasource:
-    url: jdbc:mysql://localhost:3306/EMarket
-    username: root
-    password: T15F1542
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
+  data:
+    mongodb:
+      uri: mongodb+srv://group3-PI2:fI21lcFyH4LlsT5M@cluster-pi2.uqv6omj.mongodb.net/MasterEvents
+      database: MasterEvents
 
 
 

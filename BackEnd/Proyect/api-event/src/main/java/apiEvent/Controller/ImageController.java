@@ -1,5 +1,7 @@
 package apiEvent.Controller;
 
+import apiEvent.Exception.BadRequestException;
+import apiEvent.Exception.ResourceNotFoundException;
 import apiEvent.Model.Event;
 import apiEvent.Model.Image;
 import apiEvent.Service.ImageService;
@@ -24,4 +26,11 @@ public class ImageController {
     public ResponseEntity<Image> SaveNewImage(@RequestBody Image image) {
         return ResponseEntity.status(HttpStatus.CREATED).body(imageService.SaveImage(image));
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) throws ResourceNotFoundException, BadRequestException {
+        imageService.DeleteImage(id);
+        return ResponseEntity.ok("The image with id " + id + " was eliminated successfully");
+    }
+
+
 }

@@ -1,20 +1,22 @@
 package apiEvent.Model;
 
-import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
+
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+//@Entity
+@Document(collection = "Events")
 public class Event {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nameEvent;
     private String description;
@@ -24,13 +26,9 @@ public class Event {
     private String category;
     private Integer minimumAge;
     private String address;
-    private Time openTime;
-
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Ticket> tickets;
-
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    private LocalTime openTime;
     private List<Image> images;
+    private List<Ticket> tickets;
 
     @Override
     public String toString(){
@@ -45,5 +43,12 @@ public class Event {
                 "address=" + address + '\'' +
                 "openTime=" + openTime + '\'' +
                 '}';
+    }
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 }

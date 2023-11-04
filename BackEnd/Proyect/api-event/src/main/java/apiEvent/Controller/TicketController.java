@@ -1,6 +1,7 @@
 package apiEvent.Controller;
 
 import apiEvent.Exception.BadRequestException;
+import apiEvent.Exception.ResourceNotFoundException;
 import apiEvent.Model.Event;
 import apiEvent.Model.Image;
 import apiEvent.Model.Ticket;
@@ -31,6 +32,12 @@ public class TicketController {
     public ResponseEntity<Ticket> editTicket(@RequestBody Ticket ticket) throws BadRequestException {
         Ticket editedTicket = ticketService.EditTicket(ticket);
         return ResponseEntity.ok(editedTicket);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) throws ResourceNotFoundException, BadRequestException {
+        ticketService.DeleteTicket(id);
+        return ResponseEntity.ok("The ticket with id " + id + " was eliminated successfully");
     }
 
 }

@@ -1,6 +1,7 @@
 package apiEvent.Service;
 
 import apiEvent.Exception.BadRequestException;
+import apiEvent.Exception.ResourceNotFoundException;
 import apiEvent.Model.Event;
 import apiEvent.Model.Image;
 import apiEvent.Repository.ImageRepository;
@@ -20,7 +21,18 @@ public class ImageService {
     }
 
     public Image SaveImage(Image image){
+        image.setId(1L);
+        image.setEventId(1L);
         return imageRepository.save(image);
+    }
+
+    public void DeleteImage(Long Id) throws ResourceNotFoundException{
+        Optional<Image> imageSearched = imageRepository.findById(Id);
+        if (imageSearched.isPresent()){
+            imageRepository.deleteById(Id);
+        }else{
+            throw new ResourceNotFoundException("This image doesn't exist");
+        }
     }
 
 }

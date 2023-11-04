@@ -48,6 +48,6 @@ public class CompanyController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) throws ResourceNotFoundException, BadRequestException {
         companyService.DeleteByID(id);
-        return ResponseEntity.ok("The event with id " + id + " was eliminated successfully");
+        return ResponseEntity.ok("The company with id " + id + " was eliminated successfully");
     }
 }

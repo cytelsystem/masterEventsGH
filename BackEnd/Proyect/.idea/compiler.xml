@@ -17,7 +17,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Backend" target="17" />
-      <module name="eurekaServer" target="17" />
       <module name="Grupo3" target="18" />
     </bytecodeTargetLevel>
   </component>
