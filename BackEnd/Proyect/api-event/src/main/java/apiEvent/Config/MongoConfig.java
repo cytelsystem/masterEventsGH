@@ -7,12 +7,7 @@ import com.mongodb.client.MongoClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
-import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
-import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
-import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
-import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 
 @Configuration
 public class MongoConfig extends AbstractMongoClientConfiguration {
@@ -32,10 +27,7 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 
     @Bean
     public MongoTemplate mongoTemplate() {
-        MappingMongoConverter converter = new MappingMongoConverter(new DefaultDbRefResolver(new SimpleMongoClientDatabaseFactory(mongoClient(), getDatabaseName())), new MongoMappingContext());
-        converter.setTypeMapper(new DefaultMongoTypeMapper(null));
-        converter.afterPropertiesSet();
-        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(mongoClient(), getDatabaseName()), converter);
+        return new MongoTemplate(mongoClient(), getDatabaseName());
     }
 }
 

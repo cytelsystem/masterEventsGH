@@ -3,36 +3,27 @@ package apiEvent.Service;
 import apiEvent.Exception.BadRequestException;
 import apiEvent.Exception.ResourceNotFoundException;
 import apiEvent.Model.Event;
-import apiEvent.Model.Image;
-import apiEvent.Model.Ticket;
 import apiEvent.Repository.EventRepository;
-import apiEvent.Repository.ImageRepository;
-import apiEvent.Repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.zip.DataFormatException;
+
 
 @Service
 public class EventService {
 
 
     private EventRepository eventRepository;
-    private ImageRepository imageRepository;
-    private TicketRepository ticketRepository;
 
     @Autowired
-    public EventService(EventRepository eventRepository, ImageRepository imageRepository, TicketRepository ticketRepository){
+    public EventService(EventRepository eventRepository){
         this.eventRepository = eventRepository;
-        this.imageRepository = imageRepository;
-        this.ticketRepository = ticketRepository;
     }
 
     public Event SaveEvent(Event e){
-        e.setId(1L);
        return eventRepository.save(e);
     }
 
@@ -40,19 +31,11 @@ public class EventService {
         return eventRepository.findAll();
     }
 
-    public Event FindEventByID(Long id) throws ResourceNotFoundException {
+    public Event FindEventByID(String id) throws ResourceNotFoundException {
         Optional<Event> eventSearched = eventRepository.findById(id);
 
         if (eventSearched.isPresent()) {
-            Event event = eventSearched.get();
-
-            List<Image> images = imageRepository.findByEventId(id);
-            List<Ticket> tickets = ticketRepository.findByEventId(id);
-
-            event.setImages(images);
-            event.setTickets(tickets);
-
-            return event;
+            return eventRepository.findById(id).get();
         } else {
             throw new ResourceNotFoundException("Event with ID " + id + " not found");
         }
@@ -84,12 +67,10 @@ public class EventService {
             throw new BadRequestException("There are no events with that date");
         }
     }
-    public void DeleteByID(Long id) throws BadRequestException{
+    public void DeleteByID(String id) throws BadRequestException{
         Optional<Event> eventSearched = eventRepository.findById(id);
         if (eventSearched.isPresent()){
             eventRepository.deleteById(id);
-            imageRepository.deleteByEventId(id);
-            ticketRepository.deleteByEventId(id);
         } else {
             throw new BadRequestException("This event can't be deleted");
         }

@@ -4,7 +4,7 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,11 +13,10 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
 @Document(collection = "Events")
 public class Event {
     @Id
-    private Long id;
+    private String id;
     private String nameEvent;
     private String description;
     private String location;
@@ -26,29 +25,25 @@ public class Event {
     private String category;
     private Integer minimumAge;
     private String address;
-    private LocalTime openTime;
-    private List<Image> images;
-    private List<Ticket> tickets;
+    private String openTime;
+    private List<Image> images = new ArrayList<>();
+    private List<Ticket> tickets = new ArrayList<>();
 
-    @Override
-    public String toString(){
-        return "Event{" +
-                "name=" + nameEvent + '\'' +
-                "description=" + description + '\'' +
-                "location=" + location + '\'' +
-                "city=" + city + '\'' +
-                "date=" + date + '\'' +
-                "category=" + category + '\'' +
-                "minimumAge=" + minimumAge + '\'' +
-                "address=" + address + '\'' +
-                "openTime=" + openTime + '\'' +
-                '}';
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Image{
+        private String url;
     }
-    public void setImages(List<Image> images) {
-        this.images = images;
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Ticket{
+        private String type;
+        private Double price;
+        private Integer quantity;
     }
 
-    public void setTickets(List<Ticket> tickets) {
-        this.tickets = tickets;
-    }
 }

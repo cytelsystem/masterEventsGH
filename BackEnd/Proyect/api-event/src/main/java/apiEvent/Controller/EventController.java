@@ -56,7 +56,7 @@ public class EventController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Event> findById(@PathVariable Long id) throws BadRequestException, ResourceNotFoundException {
+    public ResponseEntity<Event> findById(@PathVariable String id) throws BadRequestException, ResourceNotFoundException {
         return ResponseEntity.ok(eventService.FindEventByID(id));
     }
 
@@ -67,7 +67,7 @@ public class EventController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> delete(@PathVariable Long id) throws ResourceNotFoundException, BadRequestException {
+    public ResponseEntity<String> delete(@PathVariable String id) throws ResourceNotFoundException, BadRequestException {
         eventService.DeleteByID(id);
         return ResponseEntity.ok("The event with id " + id + " was eliminated successfully");
     }
