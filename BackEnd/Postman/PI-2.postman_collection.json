@@ -240,7 +240,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01\", \n    \"category\":\"category\",\n    \"minimumAge\":15,\n    \"address\":\"Calle calle\",\n    \"openTime\": \"11:00:00\"\n}",
+									"raw": "{\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01\", \n    \"category\":\"category\",\n    \"minimumAge\":15,\n    \"address\":\"Calle calle\",\n    \"openTime\": \"11:00:00\",\n\"images\":[\n    {\n        \"url\": \"url-1\"\n    },\n    {\n        \"url\": \"url-2\"\n    }\n],\n\"tickets\":[\n    {\n        \"type\": \"VIP\",\n        \"price\": 2000.0,\n        \"quantity\": 10\n    },\n        {\n        \"type\": \"normal\",\n        \"price\": 100.0,\n        \"quantity\": 1000\n    }\n]\n\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -251,13 +251,13 @@
 							},
 							"response": [
 								{
-									"name": "New Request",
+									"name": "PostEvent-Example",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01\", \n    \"category\":\"category\",\n    \"minimumAge\":15,\n    \"address\":\"Calle calle\",\n    \"openTime\": \"11:00:00\"\n}",
+											"raw": "{\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01\", \n    \"category\":\"category\",\n    \"minimumAge\":15,\n    \"address\":\"Calle calle\",\n    \"openTime\": \"11:00:00\",\n\"images\":[\n    {\n        \"url\": \"url-1\"\n    },\n    {\n        \"url\": \"url-2\"\n    }\n],\n\"tickets\":[\n    {\n        \"type\": \"VIP\",\n        \"price\": 2000.0,\n        \"quantity\": 10\n    },\n        {\n        \"type\": \"normal\",\n        \"price\": 100.0,\n        \"quantity\": 1000\n    }\n]\n\n}\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -292,7 +292,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 03 Nov 2023 23:41:19 GMT"
+											"value": "Mon, 06 Nov 2023 17:34:31 GMT"
 										},
 										{
 											"key": "Keep-Alive",
@@ -304,7 +304,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": 1,\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-11-30\",\n    \"category\": \"category\",\n    \"minimumAge\": 15,\n    \"address\": \"Calle calle\",\n    \"openTime\": \"11:00:00\"\n}"
+									"body": "{\n    \"id\": \"654923a5a3caf70847d38dfe\",\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01T00:00:00.000+00:00\",\n    \"category\": \"category\",\n    \"minimumAge\": 15,\n    \"address\": \"Calle calle\",\n    \"openTime\": \"11:00:00\",\n    \"images\": [\n        {\n            \"url\": \"url-1\"\n        },\n        {\n            \"url\": \"url-2\"\n        }\n    ],\n    \"tickets\": [\n        {\n            \"type\": \"VIP\",\n            \"price\": 2000,\n            \"quantity\": 10\n        },\n        {\n            \"type\": \"normal\",\n            \"price\": 100,\n            \"quantity\": 1000\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -313,15 +313,15 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8087/event/1"
+								"url": "http://localhost:8087/event/65492659a3caf70847d38dff"
 							},
 							"response": [
 								{
-									"name": "New Request",
+									"name": "Get-Event-Example",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": "http://localhost:8087/event/1"
+										"url": "http://localhost:8087/event/65492659a3caf70847d38dff"
 									},
 									"status": "OK",
 									"code": 200,
@@ -349,7 +349,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 04 Nov 2023 00:13:35 GMT"
+											"value": "Mon, 06 Nov 2023 17:50:47 GMT"
 										},
 										{
 											"key": "Keep-Alive",
@@ -361,50 +361,27 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": 1,\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01T00:00:00.000+00:00\",\n    \"category\": \"category\",\n    \"minimumAge\": 15,\n    \"address\": \"Calle calle\",\n    \"openTime\": \"11:00:00\",\n    \"images\": [\n        {\n            \"id\": 1,\n            \"url\": \"url\",\n            \"eventId\": 1\n        }\n    ],\n    \"tickets\": [\n        {\n            \"id\": 1,\n            \"type\": \"VIP\",\n            \"price\": 2000,\n            \"quantity\": 10,\n            \"eventId\": 1\n        }\n    ]\n}"
+									"body": "{\n    \"id\": \"65492659a3caf70847d38dff\",\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01T00:00:00.000+00:00\",\n    \"category\": \"category\",\n    \"minimumAge\": 15,\n    \"address\": \"Calle calle\",\n    \"openTime\": \"11:00:00\",\n    \"images\": [\n        {\n            \"url\": \"url-1\"\n        },\n        {\n            \"url\": \"url-2\"\n        }\n    ],\n    \"tickets\": [\n        {\n            \"type\": \"VIP\",\n            \"price\": 2000,\n            \"quantity\": 10\n        },\n        {\n            \"type\": \"normal\",\n            \"price\": 100,\n            \"quantity\": 1000\n        }\n    ]\n}"
 								}
 							]
-						}
-					]
-				},
-				{
-					"name": "Api-Image",
-					"item": [
+						},
 						{
-							"name": "Post-Image",
+							"name": "Random-Event",
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"url\": \"url\",\n    \"eventId\": \"1\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "http://localhost:8087/image"
+								"url": "http://localhost:8087/event/random"
 							},
 							"response": [
 								{
-									"name": "New Request",
+									"name": "Random-Event-Example",
 									"originalRequest": {
-										"method": "POST",
+										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"url\": \"url\",\n    \"eventId\": \"1\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "http://localhost:8087/image"
+										"url": "http://localhost:8087/event/random"
 									},
-									"status": "Created",
-									"code": 201,
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -429,7 +406,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 03 Nov 2023 23:48:10 GMT"
+											"value": "Mon, 06 Nov 2023 17:58:30 GMT"
 										},
 										{
 											"key": "Keep-Alive",
@@ -441,87 +418,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"id\": 1,\n    \"url\": \"url\",\n    \"eventId\": 1\n}"
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "Api-Ticket",
-					"item": [
-						{
-							"name": "Post-Ticket",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"type\": \"VIP\",\n    \"price\": 2000.0,\n    \"quantity\": 10,\n    \"eventId\": \"1\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "http://localhost:8087/ticket"
-							},
-							"response": [
-								{
-									"name": "New Request",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"type\": \"normal\",\n    \"price\": 50.0,\n    \"quantity\": 100,\n    \"eventId\": \"1\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": "http://localhost:8087/ticket"
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Vary",
-											"value": "Access-Control-Request-Method"
-										},
-										{
-											"key": "Vary",
-											"value": "Access-Control-Request-Headers"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 03 Nov 2023 23:50:58 GMT"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=60"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"id\": 1,\n    \"type\": \"normal\",\n    \"price\": 50,\n    \"quantity\": 100,\n    \"eventId\": 1\n}"
+									"body": "[\n    {\n        \"id\": \"65492659a3caf70847d38dff\",\n        \"nameEvent\": \"Event2\",\n        \"description\": \"Lorem ipsum\",\n        \"location\": \"Argentina\",\n        \"city\": \"Buenos Aires\",\n        \"date\": \"2023-12-01T00:00:00.000+00:00\",\n        \"category\": \"category\",\n        \"minimumAge\": 15,\n        \"address\": \"Calle calle\",\n        \"openTime\": \"11:00:00\",\n        \"images\": [\n            {\n                \"url\": \"url-1\"\n            },\n            {\n                \"url\": \"url-2\"\n            }\n        ],\n        \"tickets\": [\n            {\n                \"type\": \"VIP\",\n                \"price\": 2000,\n                \"quantity\": 10\n            },\n            {\n                \"type\": \"normal\",\n                \"price\": 100,\n                \"quantity\": 1000\n            }\n        ]\n    },\n    {\n        \"id\": \"654928d84ab30318c21192b0\",\n        \"nameEvent\": \"Event4\",\n        \"description\": \"Lorem ipsum\",\n        \"location\": \"Argentina\",\n        \"city\": \"Buenos Aires\",\n        \"date\": \"2023-12-01T00:00:00.000+00:00\",\n        \"category\": \"category\",\n        \"minimumAge\": 15,\n        \"address\": \"Calle calle\",\n        \"openTime\": \"11:00:00\",\n        \"images\": [\n            {\n                \"url\": \"url-1\"\n            },\n            {\n                \"url\": \"url-2\"\n            }\n        ],\n        \"tickets\": [\n            {\n                \"type\": \"VIP\",\n                \"price\": 2000,\n                \"quantity\": 10\n            },\n            {\n                \"type\": \"normal\",\n                \"price\": 100,\n                \"quantity\": 1000\n            }\n        ]\n    },\n    {\n        \"id\": \"654928dd4ab30318c21192b1\",\n        \"nameEvent\": \"Event5\",\n        \"description\": \"Lorem ipsum\",\n        \"location\": \"Argentina\",\n        \"city\": \"Buenos Aires\",\n        \"date\": \"2023-12-01T00:00:00.000+00:00\",\n        \"category\": \"category\",\n        \"minimumAge\": 15,\n        \"address\": \"Calle calle\",\n        \"openTime\": \"11:00:00\",\n        \"images\": [\n            {\n                \"url\": \"url-1\"\n            },\n            {\n                \"url\": \"url-2\"\n            }\n        ],\n        \"tickets\": [\n            {\n                \"type\": \"VIP\",\n                \"price\": 2000,\n                \"quantity\": 10\n            },\n            {\n                \"type\": \"normal\",\n                \"price\": 100,\n                \"quantity\": 1000\n            }\n        ]\n    },\n    {\n        \"id\": \"654928d24ab30318c21192af\",\n        \"nameEvent\": \"Event3\",\n        \"description\": \"Lorem ipsum\",\n        \"location\": \"Argentina\",\n        \"city\": \"Buenos Aires\",\n        \"date\": \"2023-12-01T00:00:00.000+00:00\",\n        \"category\": \"category\",\n        \"minimumAge\": 15,\n        \"address\": \"Calle calle\",\n        \"openTime\": \"11:00:00\",\n        \"images\": [\n            {\n                \"url\": \"url-1\"\n            },\n            {\n                \"url\": \"url-2\"\n            }\n        ],\n        \"tickets\": [\n            {\n                \"type\": \"VIP\",\n                \"price\": 2000,\n                \"quantity\": 10\n            },\n            {\n                \"type\": \"normal\",\n                \"price\": 100,\n                \"quantity\": 1000\n            }\n        ]\n    }\n]"
 								}
 							]
 						}
