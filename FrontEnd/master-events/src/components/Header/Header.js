@@ -30,9 +30,12 @@ const Header = () => {
         </div>
       </div>
       <div className="button-container">
-        <button className="header-button" onClick={handleFooterFix}>
-          Crear Evento
-        </button>
+
+        <Link to="/formevent" onClick={handleFooterFix}>
+          <button className="header-button" onClick={handleFooterFix}>
+            Crear Evento
+          </button>
+        </Link>
         <Link to="/registration" onClick={handleFooterFix}>
           <button className="header-button">
             Crear cuenta
