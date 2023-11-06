@@ -5,6 +5,7 @@ import PasswordRecovery from './pages/PasswordRecovery/PasswordRecovery';
 import Registration from './pages/Registration/Registration';
 import SignIn from './pages/SignIn/SignIn';
 import UserProfile from './pages/UserProfile/UserProfile';
+import FormEvent from './components/FormEvent/FormEvent';
 import Layout from './components/Layout';
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
               <Route path="/password-recovery" element={<PasswordRecovery />} />
               <Route path="/registration" element={<Registration />} />
               <Route path="/signin" element={<SignIn />} />
-              <Route path="/userprofile" element={<UserProfile />} /> 
+              <Route path="/userprofile" element={<UserProfile />} />
+              <Route path="/formevent" element={<FormEvent />} />
             </Routes>
           </Layout>
       </BrowserRouter>
