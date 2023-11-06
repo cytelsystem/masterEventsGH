@@ -240,7 +240,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nameEvent\": \"Event2\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01\", \n    \"category\":\"category\",\n    \"minimumAge\":15,\n    \"address\":\"Calle calle\",\n    \"openTime\": \"11:00:00\",\n\"images\":[\n    {\n        \"url\": \"url-1\"\n    },\n    {\n        \"url\": \"url-2\"\n    }\n],\n\"tickets\":[\n    {\n        \"type\": \"VIP\",\n        \"price\": 2000.0,\n        \"quantity\": 10\n    },\n        {\n        \"type\": \"normal\",\n        \"price\": 100.0,\n        \"quantity\": 1000\n    }\n]\n\n}\n",
+									"raw": "{\n    \"nameEvent\": \"Event5\",\n    \"description\": \"Lorem ipsum\",\n    \"location\": \"Argentina\",\n    \"city\": \"Buenos Aires\",\n    \"date\": \"2023-12-01\", \n    \"category\":\"category\",\n    \"minimumAge\":15,\n    \"address\":\"Calle calle\",\n    \"openTime\": \"11:00:00\",\n\"images\":[\n    {\n        \"url\": \"url-1\"\n    },\n    {\n        \"url\": \"url-2\"\n    }\n],\n\"tickets\":[\n    {\n        \"type\": \"VIP\",\n        \"price\": 2000.0,\n        \"quantity\": 10\n    },\n        {\n        \"type\": \"normal\",\n        \"price\": 100.0,\n        \"quantity\": 1000\n    }\n]\n\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -419,6 +419,262 @@
 									],
 									"cookie": [],
 									"body": "[\n    {\n        \"id\": \"65492659a3caf70847d38dff\",\n        \"nameEvent\": \"Event2\",\n        \"description\": \"Lorem ipsum\",\n        \"location\": \"Argentina\",\n        \"city\": \"Buenos Aires\",\n        \"date\": \"2023-12-01T00:00:00.000+00:00\",\n        \"category\": \"category\",\n        \"minimumAge\": 15,\n        \"address\": \"Calle calle\",\n        \"openTime\": \"11:00:00\",\n        \"images\": [\n            {\n                \"url\": \"url-1\"\n            },\n            {\n                \"url\": \"url-2\"\n            }\n        ],\n        \"tickets\": [\n            {\n                \"type\": \"VIP\",\n                \"price\": 2000,\n                \"quantity\": 10\n            },\n            {\n                \"type\": \"normal\",\n                \"price\": 100,\n                \"quantity\": 1000\n            }\n        ]\n    },\n    {\n        \"id\": \"654928d84ab30318c21192b0\",\n        \"nameEvent\": \"Event4\",\n        \"description\": \"Lorem ipsum\",\n        \"location\": \"Argentina\",\n        \"city\": \"Buenos Aires\",\n        \"date\": \"2023-12-01T00:00:00.000+00:00\",\n        \"category\": \"category\",\n        \"minimumAge\": 15,\n        \"address\": \"Calle calle\",\n        \"openTime\": \"11:00:00\",\n        \"images\": [\n            {\n                \"url\": \"url-1\"\n            },\n            {\n                \"url\": \"url-2\"\n            }\n        ],\n        \"tickets\": [\n            {\n                \"type\": \"VIP\",\n                \"price\": 2000,\n                \"quantity\": 10\n            },\n            {\n                \"type\": \"normal\",\n                \"price\": 100,\n                \"quantity\": 1000\n            }\n        ]\n    },\n    {\n        \"id\": \"654928dd4ab30318c21192b1\",\n        \"nameEvent\": \"Event5\",\n        \"description\": \"Lorem ipsum\",\n        \"location\": \"Argentina\",\n        \"city\": \"Buenos Aires\",\n        \"date\": \"2023-12-01T00:00:00.000+00:00\",\n        \"category\": \"category\",\n        \"minimumAge\": 15,\n        \"address\": \"Calle calle\",\n        \"openTime\": \"11:00:00\",\n        \"images\": [\n            {\n                \"url\": \"url-1\"\n            },\n            {\n                \"url\": \"url-2\"\n            }\n        ],\n        \"tickets\": [\n            {\n                \"type\": \"VIP\",\n                \"price\": 2000,\n                \"quantity\": 10\n            },\n            {\n                \"type\": \"normal\",\n                \"price\": 100,\n                \"quantity\": 1000\n            }\n        ]\n    },\n    {\n        \"id\": \"654928d24ab30318c21192af\",\n        \"nameEvent\": \"Event3\",\n        \"description\": \"Lorem ipsum\",\n        \"location\": \"Argentina\",\n        \"city\": \"Buenos Aires\",\n        \"date\": \"2023-12-01T00:00:00.000+00:00\",\n        \"category\": \"category\",\n        \"minimumAge\": 15,\n        \"address\": \"Calle calle\",\n        \"openTime\": \"11:00:00\",\n        \"images\": [\n            {\n                \"url\": \"url-1\"\n            },\n            {\n                \"url\": \"url-2\"\n            }\n        ],\n        \"tickets\": [\n            {\n                \"type\": \"VIP\",\n                \"price\": 2000,\n                \"quantity\": 10\n            },\n            {\n                \"type\": \"normal\",\n                \"price\": 100,\n                \"quantity\": 1000\n            }\n        ]\n    }\n]"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SQL",
+			"item": [
+				{
+					"name": "Api-Company",
+					"item": [
+						{
+							"name": "PostCompany",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Ale-2\",\n    \"lastName\": \"Huertas\", \n    \"nameCompany\": \"company-3\",\n    \"email\": \"Lorem ipsum\",\n    \"cuitNit\": 123456789,\n    \"password\":\"ale123456\",\n    \"phoneNumber\":1529940\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8088/company"
+							},
+							"response": [
+								{
+									"name": "PostEvent Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Ale-2\",\n    \"lastName\": \"Huertas\", \n    \"nameCompany\": \"company-3\",\n    \"email\": \"Lorem ipsum\",\n    \"cuitNit\": 123456789,\n    \"password\":\"ale123456\",\n    \"phoneNumber\":1529940\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:8088/company"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 Nov 2023 18:59:41 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 3,\n    \"nameCompany\": \"company-3\",\n    \"email\": \"Lorem ipsum\",\n    \"cuitNit\": 123456789,\n    \"password\": \"ale123456\",\n    \"phoneNumber\": 1529940,\n    \"firstName\": \"Ale-2\",\n    \"lastName\": \"Huertas\"\n}"
+								}
+							]
+						},
+						{
+							"name": "CompanyList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8088/company"
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:8088/company"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 Nov 2023 19:01:00 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 1,\n        \"nameCompany\": \"company-1\",\n        \"email\": \"Lorem ipsum\",\n        \"cuitNit\": 123456789,\n        \"password\": \"ale123456\",\n        \"phoneNumber\": 1529940,\n        \"firstName\": \"Ale-2\",\n        \"lastName\": \"Huertas\"\n    },\n    {\n        \"id\": 2,\n        \"nameCompany\": \"company-2\",\n        \"email\": \"Lorem ipsum\",\n        \"cuitNit\": 123456789,\n        \"password\": \"ale123456\",\n        \"phoneNumber\": 1529940,\n        \"firstName\": \"Ale-2\",\n        \"lastName\": \"Huertas\"\n    },\n    {\n        \"id\": 3,\n        \"nameCompany\": \"company-3\",\n        \"email\": \"Lorem ipsum\",\n        \"cuitNit\": 123456789,\n        \"password\": \"ale123456\",\n        \"phoneNumber\": 1529940,\n        \"firstName\": \"Ale-2\",\n        \"lastName\": \"Huertas\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "CompanyById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8088/company/1"
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:8088/company/1"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 Nov 2023 19:02:01 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"nameCompany\": \"company-1\",\n    \"email\": \"Lorem ipsum\",\n    \"cuitNit\": 123456789,\n    \"password\": \"ale123456\",\n    \"phoneNumber\": 1529940,\n    \"firstName\": \"Ale-2\",\n    \"lastName\": \"Huertas\"\n}"
+								}
+							]
+						},
+						{
+							"name": "CompanyDelete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://localhost:8088/company/3"
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "http://localhost:8088/company/3"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "49"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 06 Nov 2023 19:02:43 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "The company with id 3 was eliminated successfully"
 								}
 							]
 						}

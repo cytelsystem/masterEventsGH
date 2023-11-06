@@ -27,6 +27,7 @@ public class CompanyService {
         return companyRepository.findAll();
     }
 
+
     public Company FindCompanyByID(Long id) throws BadRequestException{
         Optional<Company> company = companyRepository.findById(id);
         if (company.isPresent()){
