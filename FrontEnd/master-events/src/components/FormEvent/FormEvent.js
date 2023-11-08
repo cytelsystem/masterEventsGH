@@ -2,6 +2,10 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import "./FormEvent.scss";
 
+
+
+// const pica = require('pica')();
+
 const bucket = "https://master-events-img.s3.amazonaws.com/";
 const api = "http://localhost:8080/event";
 const varaccessKeyId = "AKIAUNATVL73E5UJPETB";
@@ -37,9 +41,6 @@ const EventForm = () => {
     images: [],
   });
 
-  console.log("formData", formData)
-
-
   const [formMessage, setFormMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
@@ -54,7 +55,6 @@ const EventForm = () => {
   const [addressError, setAddressError] = useState("");
   const [imagesError, setImagesError] = useState("");
 
-  console.log("imagesError", imagesError)
 
   const isValidOpenTime = (time) => {
     const timeRegex = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
@@ -124,6 +124,28 @@ const EventForm = () => {
 
 
 
+  // const handleImageChange = (e) => {
+  //   const images = e.target.files;
+  //   const resizedImages = [];
+
+  //   if (images.length === 0) {
+  //     setImagesError("Debe cargar al menos un archivo.");
+  //     return;
+  //   } else {
+  //     setImagesError(""); // Reiniciar el mensaje de error
+  //   }
+
+  //   for (const image of images) {
+  //     resizeImages([image]).then((resizedImage) => {
+  //       resizedImages.push(...resizedImage);
+
+  //       if (resizedImages.length === images.length * 3) {
+  //         setFormData({ ...formData, images: resizedImages });
+  //       }
+  //     });
+  //   }
+  // };
+
   const handleImageChange = (e) => {
     const images = e.target.files;
     const resizedImages = [];
@@ -135,7 +157,14 @@ const EventForm = () => {
       setImagesError(""); // Reiniciar el mensaje de error
     }
 
+    const specialCharacterRegex = /[^a-zA-Z0-9\._-]/; // Expresión regular para caracteres especiales
+
     for (const image of images) {
+      if (specialCharacterRegex.test(image.name)) {
+        setImagesError("El nombre del archivo contiene caracteres especiales y no se puede mostrar.");
+        return;
+      }
+
       resizeImages([image]).then((resizedImage) => {
         resizedImages.push(...resizedImage);
 
@@ -145,6 +174,7 @@ const EventForm = () => {
       });
     }
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -197,8 +227,6 @@ const EventForm = () => {
     const validImages = formData.images.filter((image) => image.blob !== null);
 
 
-    console.log("validImages", validImages)
-
     const updatedImages = validImages.map((image) => {
       return { url: bucket+image.filename };
     });
@@ -237,51 +265,110 @@ const EventForm = () => {
     }
   };
 
-  const resizeImages = async (images) => {
-    const nombreArchivo = images[0].name;
-    const primeraParte = nombreArchivo.split('.')[0];
 
+//************************************************************************* */
 
-    const sizes = [
-      { width: 1230, height: 447, name: primeraParte+1230 },
-      { width: 327, height: 218, name: primeraParte+327 },
-      { width: 800, height: 600, name: primeraParte+800 },
-    ];
+const resizeImages = async (images) => {
 
-    const resizedImages = [];
+  const sizes = [
+    { width: 1230, height: 447, name: 1230 },
+    { width: 327, height: 218, name: 327 },
+    { width: 600, height: 254, name: 600 },
+  ];
 
-    for (const image of images) {
-      for (const size of sizes) {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const img = new Image();
-        img.src = URL.createObjectURL(image);
+  const resizedImages = [];
 
-        await new Promise((resolve) => {
-          img.onload = resolve;
-        });
+  for (const image of images) {
+    const nombreArchivo = image.name;
+    const ext = nombreArchivo.split('.').pop();
+    const primeraParte = nombreArchivo.replace(`.${ext}`, '');
 
-        canvas.width = size.width || (size.height * img.width) / img.height;
-        canvas.height = size.height || (size.width * img.height) / img.width;
+    for (const size of sizes) {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.src = URL.createObjectURL(image);
 
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      await new Promise((resolve) => {
+        img.onload = resolve;
+      });
 
-        const resizedBlob = await new Promise((resolve) => {
-          canvas.toBlob((blob) => resolve(blob));
-        });
+      canvas.width = size.width || (size.height * img.width) / img.height;
+      canvas.height = size.height || (size.width * img.height) / img.width;
 
-        // Genera un nombre de archivo único para la imagen redimensionada
-        const filename = `${size.name}.${image.name.split('.').pop()}`;
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        resizedImages.push({
-          blob: resizedBlob,
-          filename: filename,
-        });
+      // Aplicar el enfoque (sharpen) a la imagen redimensionada
+      // sharpenImage(ctx, canvas.width, canvas.height);
+
+      const resizedBlob = await new Promise((resolve) => {
+        canvas.toBlob(
+          (blob) => {
+            resolve(blob);
+          },
+          `image/${ext}`, // Utiliza la extensión del archivo como formato
+          { quality: 0.9 } // Ajusta la calidad según tus necesidades
+        );
+      });
+
+      // Genera un nombre de archivo único para la imagen redimensionada
+      const filename = `${primeraParte}_${size.name}.${ext}`;
+
+      resizedImages.push({
+        blob: resizedBlob,
+        filename: filename,
+      });
+    }
+  }
+
+  return resizedImages;
+};
+
+// Función de enfoque simple
+function sharpenImage(ctx, width, height) {
+  const data = ctx.getImageData(0, 0, width, height);
+  const pixels = data.data;
+
+  // Matriz de enfoque
+  const matrix = [0, -1, 0, -1, 5, -1, 0, -1, 0];
+
+  const factor = 1;
+  const bias = 0;
+
+  for (let i = 0; i < pixels.length; i += 4) {
+    const r = pixels[i];
+    const g = pixels[i + 1];
+    const b = pixels[i + 2];
+
+    let newR = 0,
+      newG = 0,
+      newB = 0;
+
+    for (let row = -1; row <= 1; row++) {
+      for (let col = -1; col <= 1; col++) {
+        const offset = (row + 1) * 3 + col + 1;
+        const neighborR = pixels[i + offset * 4];
+        const neighborG = pixels[i + offset * 4 + 1];
+        const neighborB = pixels[i + offset * 4 + 2];
+
+        newR += neighborR * matrix[offset];
+        newG += neighborG * matrix[offset];
+        newB += neighborB * matrix[offset];
       }
     }
 
-    return resizedImages;
-  };
+    pixels[i] = Math.min(255, Math.max(0, factor * newR + bias));
+    pixels[i + 1] = Math.min(255, Math.max(0, factor * newG + bias));
+    pixels[i + 2] = Math.min(255, Math.max(0, factor * newB + bias));
+  }
+
+  ctx.putImageData(data, 0, 0);
+}
+
+
+
+  //************************************************************************* */
+
 
 
   const uploadImagesToS3 = async (images) => {

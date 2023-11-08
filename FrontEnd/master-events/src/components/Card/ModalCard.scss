@@ -1,0 +1,147 @@
+
+@media (min-width: 1200px){
+  .title-container {
+
+    .title-image {
+
+    }
+
+    .title-info {
+      margin-top: 20px;
+      h2 {
+        font-family: 'Roboto' !important;
+        font-weight: 600 !important;
+        font-variant: small-caps !important;
+        color: #5f5f5f!important;
+        height: 50px;
+
+
+      }
+      p {
+
+      }
+    }
+  }
+
+  .modal-content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    width: auto;
+  }
+
+  .modal-dialog {
+    display: flex;
+    flex-direction: column;
+  }
+
+    .h2mio {
+
+    }
+
+
+  /* Estilo para el botón */
+  .buy-button-container {
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    height: 20%;
+
+    Button {
+      width: 80%; /* Tamaño del botón */
+    }
+  }
+
+  /* Estilo para el contenedor del cuerpo */
+  .body-container {
+    border: 1px solid #dee2e6; /* Borde */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 10px; /* Espaciado interno del cuerpo */
+  }
+
+  .modal-card-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .btn {
+    width: 120%;
+    height: 150%;
+  }
+
+}
+
+@media (min-width: 764px){
+  .title-container {
+
+    .title-image {
+
+    }
+
+    .title-info {
+      margin-top: 20px;
+      h2 {
+        font-family: 'Roboto' !important;
+        font-weight: 600 !important;
+        font-variant: small-caps !important;
+        color: #5f5f5f!important;
+        height: 50px;
+
+
+      }
+      p {
+
+      }
+    }
+  }
+
+  .modal-content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    width: auto;
+  }
+
+  .modal-dialog {
+    display: flex;
+    flex-direction: column;
+  }
+
+    .h2mio {
+
+    }
+
+
+  /* Estilo para el botón */
+  .buy-button-container {
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    height: 20%;
+
+    Button {
+      width: 80%; /* Tamaño del botón */
+    }
+  }
+
+  /* Estilo para el contenedor del cuerpo */
+  .body-container {
+    border: 1px solid #dee2e6; /* Borde */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 10px; /* Espaciado interno del cuerpo */
+  }
+
+  .modal-card-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .btn {
+    width: 120%;
+    height: 150%;
+  }
+
+}
+
