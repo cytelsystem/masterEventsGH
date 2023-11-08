@@ -1,55 +1,71 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./Card.scss";
-import {DataContext} from "../../DataContext";
+import { DataContext } from "../../DataContext";
 
 function Card() {
-  const {configuracion} = useContext(DataContext);
+  const { randomEvent } = useContext(DataContext);
+
+  // Comprobar si configuracion es null o undefined
+  if (!randomEvent) {
+    return null; // O cualquier otro manejo de error que prefieras
+  }
 
   return (
-    <div
-      id="ContenedorEventos"
-      className="container-fluid servicios-contenedor-fluid"
-    >
-      <div id="ContenedorCard" className="container container-servicios">
+    <div id="ContenedorEventos">
+      <div id="ContenedorCard">
         <div className="encabezadocard">
           <small>CONOCE NUESTROS</small>
           <h2>EVENTOS</h2>
         </div>
-        <div id="cont-row" className="row">
-          {configuracion.servicios.card.map((detalle) => (
-            <div id="card" className="element-card" key={detalle.id}>
-              <div
-                id="imagen"
-                className="card-imagen"
-                style={{
-                  backgroundImage: `url(${configuracion.img.linkImg}${detalle.imagen})`,
-                }}
-              ></div>
-              <div id="body" className="element-card-text">
-                <br />
-                <h3>{detalle.titulo}</h3>
+        <div id="cont-row">
+          {randomEvent.map((evento, index) => {
+            // Filtra las imágenes que contienen "1230" en su URL
+            const imagenesFiltradas = evento.images.filter((imagen) =>
+              imagen.url.includes("327")
+            );
+            const imagenURL = imagenesFiltradas.length > 0 ? imagenesFiltradas[0].url : "";
 
-                <hr className="linea"/>
-                <br />
+            return (
+              <div id="card" key={evento.id}>
+                <div
+                  id="imagen"
+                  className="card-imagen"
+                  style={{
+                    backgroundImage: `url(${imagenURL})`,
+                  }}
+                ></div>
+                <div id="body">
+                  <h3>{evento.nameEvent}</h3>
+                  <div className="linea"></div>
+                  <div className="detallesevent">
+                    <div className="fecha">
 
-                <div className="detallesevent">
-                  <div className="fecha">
-                    <div className="fecha-mes">Mar</div>
-                    <div className="fecha-dia">31</div>
-                    <div className="fecha-mesAno">Oct 2023</div>
-                  </div>
-                  <div className="contbodyizquierdo">
-                    <div className="lugar">{detalle.lugar}</div>
-                    <div className="button">
-                      <a href={`/eventos/detalle/${detalle.id}`} type="button">
-                        Ver Detalles
-                      </a>
+                      <div className="fecha-mes">
+                        {new Date(evento.date).toLocaleString("default", {
+                          month: "short",
+                        })}
+                      </div>
+                      <div className="fecha-dia">
+                        {new Date(evento.date).getDate()}
+                      </div>
+                      <div className="fecha-mesAno">
+                        {new Date(evento.date).getFullYear()}
+                      </div>
+                    </div>
+                    <div className="contbodyizquierdo">
+                      {/* <div className="lugar">{evento.location}</div> */}
+                      <h3 className="lugar">{evento.location}</h3>
+                      <div className="button">
+                        <a href={`/eventos/detalle/${evento.id}`} type="button">
+                          Ver Detalles
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

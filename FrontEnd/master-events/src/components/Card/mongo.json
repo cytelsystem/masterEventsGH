@@ -1,0 +1,51 @@
+[
+  {
+      "id": "654937ad2a2fe2779d73346d",
+      "nameEvent": "prueba evento nuevo",
+      "description": "este es una prueba con mongo",
+      "location": "santamarta",
+      "city": "santamarta",
+      "date": "2023-11-07T00:00:00.000+00:00",
+      "category": "concierto",
+      "minimumAge": 16,
+      "address": "Transv 70D bis A # 68 - 75 Sur Torre 1 apto 1306",
+      "openTime": "19:00:00",
+      "images": [
+          {
+              "url": "https://master-events-img.s3.amazonaws.com/primerPosiblePrototipo1230.jpg"
+          },
+          {
+              "url": "https://master-events-img.s3.amazonaws.com/primerPosiblePrototipo304.jpg"
+          },
+          {
+              "url": "https://master-events-img.s3.amazonaws.com/primerPosiblePrototipo800.jpg"
+          }
+      ],
+      "tickets": []
+  },
+  {
+      "id": "65493cbc2a2fe2779d73346e",
+      "nameEvent": "conciert",
+      "description": "rferferfre",
+      "location": "bogota",
+      "city": "BOGOTA",
+      "date": "2023-11-10T00:00:00.000+00:00",
+      "category": "fwefwe",
+      "minimumAge": 18,
+      "address": "Transv 70D bis A N 68  75 Sur Torre 1",
+      "openTime": "19:00:00",
+      "images": [
+          {
+              "url": "https://master-events-img.s3.amazonaws.com/061123grupo1230.jpg"
+          },
+          {
+              "url": "https://master-events-img.s3.amazonaws.com/061123grupo304.jpg"
+          },
+          {
+              "url": "https://master-events-img.s3.amazonaws.com/061123grupo800.jpg"
+          }
+      ],
+      "tickets": []
+  }
+
+]

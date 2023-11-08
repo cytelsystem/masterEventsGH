@@ -244,7 +244,7 @@ const EventForm = () => {
 
     const sizes = [
       { width: 1230, height: 447, name: primeraParte+1230 },
-      { width: 304, height: 168, name: primeraParte+304 },
+      { width: 327, height: 218, name: primeraParte+327 },
       { width: 800, height: 600, name: primeraParte+800 },
     ];
 
