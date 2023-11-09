@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mastereventsgh/static/css/main.6e0f7a25.css",
+    "main.js": "/mastereventsgh/static/js/main.93c1eab6.js",
+    "static/media/bootstrap-icons.woff?": "/mastereventsgh/static/media/bootstrap-icons.449ad8adf6ae0424b7ed.woff",
+    "static/media/bootstrap-icons.woff2?": "/mastereventsgh/static/media/bootstrap-icons.dea24bf5a7646d8b84e7.woff2",
+    "index.html": "/mastereventsgh/index.html",
+    "main.6e0f7a25.css.map": "/mastereventsgh/static/css/main.6e0f7a25.css.map",
+    "main.93c1eab6.js.map": "/mastereventsgh/static/js/main.93c1eab6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e0f7a25.css",
+    "static/js/main.93c1eab6.js"
+  ]
+}
