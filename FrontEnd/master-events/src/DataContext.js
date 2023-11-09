@@ -3,7 +3,7 @@ import { useState, useEffect, createContext } from 'react';
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const apiUrl = "http://localhost:8080/event";
+  const apiUrl = "http://ec2-100-24-53-81.compute-1.amazonaws.com:8081/event";
 
   const [configuracion, setConfiguracion] = useState(null);
   const [eventById, setEventById] = useState(null);
